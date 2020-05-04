@@ -169,4 +169,46 @@ function add (float $a, float $b) : float { // : float defines the type that can
 
 
 function message (integer $a)
-//
+//will only process whole numbers 
+
+//ARRAYS
+$arr = [1, 2, 3 , 4, 5];
+
+var_dump($arr[2]);
+
+for ($i = 0; $i < count($arr); $i += 1);
+
+//older notation, but still in use
+$arr = array('fish', 'cow', 'wombat');
+var_dump($arr[2]);
+
+
+$arr ['fish', 'wombat']
+$arr[] = "kangaroo"
+//adds to the end of an array (pushes)
+
+$assoc = [
+    "name" => "Bob",
+    "age" => 48, 
+    "address" [
+        "road" => "Road one",
+    ]
+];
+
+//to push in a new value
+$assoc["legs"] =2;
+
+//assocative array, works in the same way as an object literal 
+var_dump($assoc["name"]);
+
+//looping over arrays
+foreach ($assoc as $value) {
+    var_dump($value);
+}
+//bob, 48, road one 
+
+foreach ($assoc as $key) {
+    var_dump($value);
+}
+//name, age, address
+
