@@ -23,8 +23,8 @@
 // FizzBuzz
 // 16
 
-for ($i = 0; $i <= 100; $i += 1) {
-    if (($i % 3 == 0 && $i & 5 == 0) {
+for ($i = 1; $i <= 100; $i += 1) {
+    if (($i % 3 == 0) && ($i % 5 == 0)) {
         var_dump("FizzBuzz");
     } else if ($i % 3 == 0) {
         var_dump("Fizz"); 
