@@ -115,3 +115,58 @@ do {
     $total += $i;
 } while ($total < 100)
 //do while loops will always run once, and then will only run again if the conditon is true
+
+//functions
+function add($a, $b) {
+    return $a + $b;
+}
+
+var_dump(add(1, 2));
+
+
+$msg = "hello";
+//global scope
+
+function message($a) {
+    $msg = "aloha"
+//local scope $msg variable will be used within the function by default, rather than the globally scoped variable
+    return $msg . $a;
+}
+
+var_dump(message("hbomb")); //"aloha hbomb" - locally scoped
+var_dump($msg); // "hello" - globally scoped 
+
+global $msg
+//be default, scoped to function - use global keyword to use the globally assigned variable 
+
+//anonomys functions
+$message = function ($a) {
+return "Hello " . $a;
+};
+
+var_dump(array_map($message, ["Adam", "Avi]"]));
+
+$msg = "Hello ";
+
+$message = function ($a) use($msg) {
+    return $msg . $a;
+};
+//'use' keyword allows us to use global function within a function
+
+
+//TYPES
+//what sort of thing we want a function to be given 
+
+function message (string $a) {
+    return "Hello " . $a;
+};
+
+function message (float $a)
+//floats include integers and decimals 
+function add (float $a, float $b) : float { // : float defines the type that can be returned 
+    return $a + $b;
+};
+
+
+function message (integer $a)
+//
