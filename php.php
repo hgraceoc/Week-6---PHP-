@@ -12,6 +12,8 @@ php hello.php
 //to run file in the command line 
 
 
+
+
 //VARIABLES
 $fish = 7;
 //all variables start with a $ 
@@ -55,6 +57,8 @@ false
 " "
 null 
 []
+
+
 
 //CONDITIONALS
 //whenever you use a variable, make sure you use a $
@@ -116,7 +120,10 @@ do {
 } while ($total < 100)
 //do while loops will always run once, and then will only run again if the conditon is true
 
-//functions
+
+
+
+//FUNCTIONS
 function add($a, $b) {
     return $a + $b;
 }
@@ -153,9 +160,21 @@ $message = function ($a) use($msg) {
 };
 //'use' keyword allows us to use global function within a function
 
+declare(strict_types=1);
+
+function oap ($assoc) : bool {
+    return ($assoc["age"] > 65);
+}
+// return type predefined as a bool so will either return true or false. In this case, if the age of each person in the associative array is above 65, it will return true, and otherwise false  
+
+
+
+
 
 //TYPES
 //what sort of thing we want a function to be given 
+
+declare(strict_types=1); // always first line after opening tag
 
 function message (string $a) {
     return "Hello " . $a;
@@ -170,6 +189,10 @@ function add (float $a, float $b) : float { // : float defines the type that can
 
 function message (integer $a)
 //will only process whole numbers 
+
+
+
+
 
 //ARRAYS
 $arr = [1, 2, 3 , 4, 5];
@@ -198,10 +221,14 @@ $assoc = [
 //to push in a new value
 $assoc["legs"] =2;
 
-//assocative array, works in the same way as an object literal 
+//associative array, works in the same way as an object literal 
 var_dump($assoc["name"]);
 
-//looping over arrays
+
+
+
+
+//LOOPING OVER ARRAYS
 foreach ($assoc as $value) {
     var_dump($value);
 }
@@ -212,3 +239,10 @@ foreach ($assoc as $key) {
 }
 //name, age, address
 
+foreach ($assoc as $key) {
+    var_dump($key);
+}
+
+array_map()
+array_reduce()
+array_filter()
