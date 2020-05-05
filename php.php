@@ -246,3 +246,41 @@ foreach ($assoc as $key) {
 array_map()
 array_reduce()
 array_filter()
+
+
+
+//CLASSES
+
+class Person 
+{
+    private $firstName;
+    private $lastName;
+    private $legs =2; //sets a default value
+    //set properties to private as a default
+
+    public function __construct($first, $last)
+    {
+        $this->firstName = $first;
+        $this->lastName = $last;
+    }
+
+    public function getFullName() : string
+    {
+        return $this->firstName . " " . $this->lastName;
+    }
+
+    public function setLastName(string $name)
+    {
+        $this->lastName = $name;
+        return $this;
+    }
+}
+
+$hannah = new Person("Hannah", "Crya");
+
+$hannah->setLastName("Cryer");
+
+echo $hannah->getFullName();
+
+//STATIC
+
