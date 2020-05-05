@@ -258,7 +258,7 @@ class Person
     private $legs =2; //sets a default value
     //set properties to private as a default
 
-    public function __construct($first, $last)
+    public function __construct(string $firstName, string $lastName)
     {
         $this->firstName = $first;
         $this->lastName = $last;

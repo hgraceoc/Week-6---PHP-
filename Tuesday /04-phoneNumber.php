@@ -11,7 +11,7 @@
     function phoneNumber(string $str) : bool {
         return preg_match("/^[\d-]+$/", $str)===1;
     }
-    //by using the ^ and & to bookend the full statement, it changes the meaning so that it applies to the whole contents of the string 
+    //by using the ^ and & to bookend the full statement, it changes the meaning so that it applies to the whole contents of the string, rather than just finding them somewhere within the string
     
     var_dump(phoneNumber("blah")); // bool(false)
     var_dump(phoneNumber("12-323-5-344")); // bool(true)

@@ -7,7 +7,6 @@ function mi5(string $str) : bool {
     return preg_match("/^(00)\d/", $str) ===1;
 } 
 
-// … your function here
 
 var_dump(mi5("007")); // bool(true)
 var_dump(mi5("oo8")); // bool(false)
