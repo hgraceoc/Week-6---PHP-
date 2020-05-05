@@ -282,5 +282,38 @@ $hannah->setLastName("Cryer");
 
 echo $hannah->getFullName();
 
+
 //STATIC
 
+public static function {
+    //a function that lives inside the person class and does is used within the people function, a method that belongs to a class rather than an instance that the class creates
+}
+
+private static $hiya {
+    //static variable, belongs to the Person class, as supposed to a specifc person
+}
+
+function lastNames(array $people) {
+    $lastNames = [];
+
+    foreach ($people as $person) {
+        $lastNames[] = $person->getLastName();
+    }
+
+    return $lastNames;
+
+}
+
+$result = Person::lastNames([$mark, $jack]);
+
+
+//DATE TIME CLASS
+$now = new DateTime();
+var_dump($now);
+
+$then = newDateTime("5th March 2020, 12:07:09");
+var_dump($then->format("Y-m-d H:i:s"));
+
+$interval = new DateInterval("P2Y4M5DT7H8M5S");
+
+var_dump($now->sub($interval));
