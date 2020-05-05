@@ -74,3 +74,48 @@ kang\nroo
 kang\troo 
 //tab 
 
+\s 
+//matches any sort of whitespace character
+
+[^\s]+
+//one or more characters, but not spaces
+
+\S 
+//(uppercase)not whitespace
+
+\w+ 
+//a-z,A-Z,0-9,_
+
+\W
+//matches any character that is not a word character
+
+\d
+//digits 0-9
+\d{5}-\d{6}
+//01225-867890
+
+\D 
+//not digits 
+
+. 
+//any character possible
+
+www\.something 
+//in order to use the dot as an actual dot
+
+
+//ANCHORS
+^kangaroo
+//anchor which has to occur at beginning of the string 
+
+kangroo$
+//anhcor which has to match at the end of the string 
+
+^kangroo$
+//would only match if it was exactly that string 
+
+preg_match();
+//function that takes a string as an argument
+
+preg_match("/kangaro*/", "kangaroo");
+// / / forwards slash at beginning and end of regex (inside a string) to signal that regex is being used 
