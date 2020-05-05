@@ -114,8 +114,45 @@ kangroo$
 ^kangroo$
 //would only match if it was exactly that string 
 
+
+//PHP Regex Functions
+
 preg_match();
 //function that takes a string as an argument
 
 preg_match("/kangaro*/", "kangaroo");
 // / / forwards slash at beginning and end of regex (inside a string) to signal that regex is being used 
+$result = preg_match("/kangaro*/", "cat");
+var_dump($result); //0
+//0 means that it is not a match
+
+$result = preg_match("/^kangaro*$/", "kangaroo");
+var_dump($result); //1
+//1 means that it is a match 
+
+if ($result === 0);
+// to check whether or not it has matched 
+
+
+preg_split();
+
+
+$subject = "fish monkey     cow     penguin";
+preg_replace("/\s+/", " ", $subject);
+//replace more than one space, with a single space, in $subject
+
+filter_var($subject, FILTER_VALIDATE_EMAIL);
+//filters a string to return a valid email address 
+
+filter_var($subject, FILTER_VALIDATE_URL);
+
+/[a-f]/i
+// i flag, means that it is case insensitive
+
+|
+//can use pipe operator  
+
+function validEmail(string $str) : bool {
+    $str = preg_replace("/(^\s)|(\s$)/", "", $str); //remove beginning and ending spaces
+    return filter_var($str, FILTER_VALIDATE_EMAIL) === $str; //validate email
+}
