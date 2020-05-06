@@ -282,6 +282,47 @@ $hannah->setLastName("Cryer");
 
 echo $hannah->getFullName();
 
+//GETTERS AND SETTERS
+//setters read information that is already there and extract it, setters are used to create additional information, so therefore will require new properties to be declared 
+
+class Car 
+{
+    private $make;
+    private $numberPlate;
+    private $mileage = 0;
+    //set $mileage to zero as default inital value 
+
+    public function __construct(string $make, string $numberPlate)
+    {
+        $this->make = $make;
+        $this->numberPlate = $numberPlate;
+    }
+    //contsruct the class car, by combining the make and numberplate properties into a string 
+
+    public function getNumberplate() : string
+    {
+        return $this->numberPlate;
+    }
+    //getter method which returns just the number plate for the instance in which the function is called
+
+    public function getMake() : string
+    {
+        return $this->make;
+    }
+
+    public function addJourney(int $miles)
+    {
+        $this->mileage += $miles;
+    }
+    //add journey function, used to update the mileage property. Takes a parameter of miles (passed in as the function is called) and adds that to the current mileage property (which was previously declared) += will ensure a cumulative total  
+
+    public function getMileage() : int
+    {
+        return $this->mileage;
+    }
+    //the get mileage property will read the updated mileage property declared at the beginning, which is updated by the add journey function each time it is used 
+    
+}
 
 //STATIC
 
