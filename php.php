@@ -358,3 +358,100 @@ var_dump($then->format("Y-m-d H:i:s"));
 $interval = new DateInterval("P2Y4M5DT7H8M5S");
 
 var_dump($now->sub($interval));
+
+
+
+
+//NAME SPACES
+
+//first file - post.php
+<?php
+
+class Post
+{
+    private $title;
+    private $content:
+
+    public function __construct(string $title, string $content)
+    {
+        $this->title = $title;
+        $this->content = $content; 
+    }
+}
+//class Post defined within this file 
+
+
+//second file - app.php
+<?php
+
+require_once "Post.php";
+require 
+include_once
+include //when you use include, if the file cannot be found, the code still runs 
+
+$post = new Post("Blah", "Blah blah blah");
+
+
+
+namespace Slack;
+//at the beginning of the file you are pulling
+
+require_once "Post.php"
+require_once "Slack/Post.php"
+
+$post - new Post();
+$post2 = new Slack\Post();
+//directory\filename
+//in the file in which you are calling it
+
+use Slack\Post as UPost;
+
+$post - new Post();
+$post2 = new UPost();
+//to use both files with the same name in the same file
+
+//AUTOLOADING
+spl_autoload_register(function ($classname) {
+
+});
+
+//COMPOSER
+//file directory called composer
+//composer init -n //terminal
+
+//composer.json
+{
+    "require": {},
+    "autoload": {
+        "psr-4"{"App\\": "app/"}
+    }
+}
+
+//in same level as composer, we need an app directory
+
+//composer dump-autoload //terminal
+
+//file in the same directory as vendor
+
+//index.php
+<?php
+
+include_once __DIR__ . "/vendor/autoload.php";
+
+namespace App\Slack;
+class Post
+
+//LIBRARIES
+
+//PACKAGES
+//.gitignore 
+vendor/
+
+composer require symfony/var-dumper //terminal
+
+composer require nesbot/carbon //template
+
+
+
+
+
