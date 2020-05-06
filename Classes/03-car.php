@@ -10,17 +10,20 @@ class Car
     private $make;
     private $numberPlate;
     private $mileage = 0;
+    //set $mileage to zero as default inital value 
 
     public function __construct(string $make, string $numberPlate)
     {
         $this->make = $make;
         $this->numberPlate = $numberPlate;
     }
+    //contsruct the class car, by combining the make and numberplate properties into a string 
 
     public function getNumberplate() : string
     {
         return $this->numberPlate;
     }
+    //getter method which returns just the number plate for the instance in which the function is called
 
     public function getMake() : string
     {
@@ -31,6 +34,7 @@ class Car
     {
         $this->mileage += $miles;
     }
+    //add journey function, used to update the mileage property. Takes a parameter of miles (passed in as the function is called) and adds that to the current mileage property, which was previously declared 
 
     public function getMileage() : int
     {
