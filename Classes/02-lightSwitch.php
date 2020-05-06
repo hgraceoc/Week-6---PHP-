@@ -9,6 +9,7 @@ class LightSwitch
 {
     private $on = false;
     //setting 'on'as an initial state, so that the isOn and turnOn and turnOff functions have a value to respond to 
+    //in php, we do not always need a constructor. There is no argument to be passed initially, so it doesnt require a constructor and instead we set the property to a boolean value.
 
     public function isOn()
     {
