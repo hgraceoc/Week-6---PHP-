@@ -9,7 +9,7 @@ class Car
 {
     private $make;
     private $numberPlate;
-    private $mileage;
+    private $mileage = 0;
 
     public function __construct(string $make, string $numberPlate)
     {
@@ -27,11 +27,21 @@ class Car
         return $this->make;
     }
 
+    public function addJourney(int $miles)
+    {
+        $this->mileage += $miles;
+    }
+
+    public function getMileage() : int
+    {
+        return $this->mileage;
+    }
     
 }
 
 // you pass in a make and number plate
 $car = new Car("Ford", "XY11 4TY");
+var_dump($car);
 
 // you can get various bits of information about it
 var_dump($car->getNumberplate()); // string(8) "XY11 4TY"
@@ -40,7 +50,9 @@ var_dump($car->getMileage()); // int(0)
 
 // you can add journey
 $car->addJourney(100);
+var_dump($car);
 var_dump($car->getMileage()); // int(100)
 
 $car->addJourney(200);
+var_dump($car);
 var_dump($car->getMileage()); // int(300)
