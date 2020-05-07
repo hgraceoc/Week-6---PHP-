@@ -85,7 +85,7 @@ var_dump($y);
 switch ($x) {
     case 10: echo "Fish"; break;
     case 11: echo "Marigold"; break;
-    deafult: echo "Echium";
+    default: echo "Echium";
 }
 
 //for loop
@@ -436,10 +436,13 @@ spl_autoload_register(function ($classname) {
 //index.php
 <?php
 
-include_once __DIR__ . "/vendor/autoload.php";
+require_once __DIR__ . "/vendor/autoload.php";
 
 namespace App\Slack;
 class Post
+{
+
+}
 
 //LIBRARIES
 
@@ -452,6 +455,109 @@ composer require symfony/var-dumper //terminal
 composer require nesbot/carbon //template
 
 
+//OOP
+
+//ENCAPSULATION
+
+//mail.php
+<?php
+
+function mail($to, $from, $subject $message)
+{
+
+}
+
+// mail("bob@bob.com, jim@jim.com, "Hey Bob", "How are you?");
+
+// //using a function becomes quickly complicated and parameters become hard to track 
+
+//second version 
+class Mail 
+{
+    private $to = null;
+    private $from = null;
+    private $subject = null;
+    private $message = null;
+    private $cc = [];
+    //inside the mail class, not changeable as not global 
+
+    public function to($email) 
+    {
+        $this->to = $email;
+        return $this;
+    }
+
+    public function from($email)
+    {
+        $this->from = $email;
+        return $this;
+    }
+
+    public function mail()
+    {
+        //do stuff with parameters
+    }
+}
+
+$mailer = new Mail();
+$mailer->to("bob@bob.com")->from("jim@jim.com")->mail();
+//chaining the properties that you want to use 
 
 
 
+//VISIBILITY
+
+//public properties, others can tweak 
+
+//private properties, full control over the values that they can take - as they cannot be changed by others 
+
+
+
+
+//bootstrap.php
+require_once __DIR__ . "/vendor/autoload.php";
+
+$app = new App\App();
+//class called app in the namespace App
+
+$app->start();
+//calling the start method on app
+
+mailingList.php 
+uses localMailServer.php to actually send the mail 
+//an object using another object
+
+
+//types to ensure encapsulation 
+public function send(LocalMailServer $mail)
+
+public function __construct(array $subscribers)
+
+public function from($email) : localMailServer
+{
+    $this->from = $email;
+    return $this;
+}
+
+//POLYMORPHISM
+
+//INTERFACE
+//pass in different classes doing different things 
+//Mailerinterface.php
+<?php
+
+namespace App;
+
+interface MailerInterface
+{
+    public function mail() : void;
+    public function to(string $subscriber) : MailerInterface;
+}
+//the classes decide how the thing works
+//the interface sets conditions for how those classes are used
+
+
+//in the class file
+class LocalMailSever implements MailerInterface
+
+public function send(MailerInterface $mail)
